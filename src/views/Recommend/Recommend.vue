@@ -50,7 +50,26 @@ export default {
     this.banners = banner.banners
     this.personalized = personalized.result
     this.newAlbums = newAlbum.albums.slice(0, 6)
-    this.newSongs = newSong.result
+    // this.newSongs = newSong.result
+    // console.log(newSong.result)
+    const list = []
+    newSong.result.forEach((value) => {
+      const obj = {}
+      obj.id = value.id
+      obj.name = value.name
+      obj.picUrl = value.song.album.picUrl
+      let singer = ''
+      for (let i = 0; i < value.song.artists.length; i++) {
+        if (i === 0) {
+          singer = value.song.artists[i].name
+        } else {
+          singer += '-' + value.song.artists[i].name
+        }
+      }
+      obj.singer = singer
+      list.push(obj)
+    })
+    this.newSongs = list
   },
   components: {
     Banner,

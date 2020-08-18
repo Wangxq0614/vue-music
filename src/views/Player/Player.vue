@@ -111,7 +111,7 @@ export default {
       setLocalStorage('favorite', newValue)
     },
     historyList (newValue, oldValue) {
-      console.log(newValue)
+      // console.log(newValue)
       // window.localStorage.setItem('history', JSON.stringify(newValue))
       setLocalStorage('history', newValue)
     }

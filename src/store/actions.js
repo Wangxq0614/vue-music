@@ -45,34 +45,37 @@ export default {
     const urls = await getSongUrl(ids.join(','))
     // 保存歌曲信息
     const list = []
-    result.songs.forEach((value, index) => {
-      const obj = {}
-      // 保存歌曲id
-      obj.id = value.id
-      // 保存歌曲名称
-      obj.name = value.name
-      // 保存作者信息
-      let singer = ''
-      value.ar.forEach((item, index) => {
-        if (index === 0) {
-          singer = item.name
-        } else {
-          singer += '-' + item.name
+    if (result.songs) {
+      result.songs.forEach((value, index) => {
+        const obj = {}
+        // 保存歌曲id
+        obj.id = value.id
+        // 保存歌曲名称
+        obj.name = value.name
+        // 保存作者信息
+        let singer = ''
+        value.ar.forEach((item, index) => {
+          if (index === 0) {
+            singer = item.name
+          } else {
+            singer += '-' + item.name
+          }
+        })
+        obj.singer = singer
+        // 保存歌曲图片信息
+        obj.picUrl = value.al.picUrl
+        // 保存播放地址
+        for (let j = 0; j < urls.data.length; j++) {
+          const item = urls.data[j]
+          if (value.id === item.id) {
+            obj.url = item.url
+            break
+          }
         }
+        list.push(obj)
       })
-      obj.singer = singer
-      // 保存歌曲图片信息
-      obj.picUrl = value.al.picUrl
-      // 保存播放地址
-      for (let j = 0; j < urls.data.length; j++) {
-        const item = urls.data[j]
-        if (value.id === item.id) {
-          obj.url = item.url
-          break
-        }
-      }
-      list.push(obj)
-    })
+    }
+
     commit(SET_SONG_DETAIL, list)
   },
   async getSongLyric({ commit }, id) {
