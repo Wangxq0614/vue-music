@@ -3,8 +3,13 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import 'lib-flexible'
-import fastclick from 'fastclick'
 import './assets/css/base.scss'
+import fastclick from 'fastclick'
+import VueLazyload from 'vue-lazyload'
+Vue.use(VueLazyload, {
+  // 懒加载占位图片
+  loading: require('./assets/images/loading.png')
+})
 
 fastclick.attach(document.body)
 Vue.config.productionTip = false
