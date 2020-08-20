@@ -21,7 +21,15 @@ const routes = [
   },
   {
     path: '/singer',
-    component: () => import('../views/Singer/Singer.vue')
+    component: () => import('../views/Singer/Singer.vue'),
+
+    children: [
+      {
+        path: 'detail/:id/:type',
+        component: () => import('../views/Detail/Detail.vue'),
+        props: true
+      }
+    ]
   },
   {
     path: '/rank',

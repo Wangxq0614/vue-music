@@ -60,7 +60,7 @@ export default {
         this.iscroll.refresh()
       }, 100)
     },
-    scrollTo (x, y, time) {
+    scrollTo (x, y, time = 100) {
       this.iscroll.scrollTo(x, y, time)
     }
   }

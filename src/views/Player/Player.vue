@@ -42,7 +42,7 @@ export default {
     this.setHistoryList(hisList)
   },
   mounted () {
-    this.$refs.audio.oncanplay = () => {
+    this.$refs.audio.ondurationchange = () => {
       this.totalTime = this.$refs.audio.duration
     }
   },

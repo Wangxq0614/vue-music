@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import { getPlayList, getAlbum } from '../../api/index'
+import { getPlayList, getAlbum, getSingerDetail } from '../../api/index'
 import DeatilHeader from '../../components/Deatil/DeatilHeader'
 import DetailTop from '../../components/Deatil/DetailTop'
 import DetailBottom from '../../components/Deatil/DetailBottom'
@@ -51,6 +51,13 @@ export default {
         name: albums.album.name,
         coverImgUrl: albums.album.picUrl,
         tracks: albums.songs
+      }
+    } else if (this.type === 'singer') {
+      const singer = await getSingerDetail(this.id)
+      this.playList = {
+        name: singer.artist.name,
+        coverImgUrl: singer.artist.picUrl,
+        tracks: singer.hotSongs
       }
     }
   },
