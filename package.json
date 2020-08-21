@@ -12,6 +12,7 @@
     "core-js": "^3.6.5",
     "fastclick": "^1.0.6",
     "iscroll": "^5.2.0",
+    "jsdom": "^16.4.0",
     "lib-flexible": "^0.3.2",
     "swiper": "^5.4.5",
     "velocity-animate": "^1.5.2",
