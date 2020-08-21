@@ -16,8 +16,10 @@ import DeatilHeader from '../../components/Deatil/DeatilHeader'
 import DetailTop from '../../components/Deatil/DetailTop'
 import DetailBottom from '../../components/Deatil/DetailBottom'
 import ScrollView from '../../components/Common/ScrollView'
+import MetaInfo from '../../../vue-meta-info'
 export default {
   name: 'Detail',
+  metaInfo: MetaInfo.detail,
   props: {
     id: {
       type: String,
