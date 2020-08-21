@@ -33,7 +33,14 @@ const routes = [
   },
   {
     path: '/rank',
-    component: () => import('../views/Rank/Rank.vue')
+    component: () => import('../views/Rank/Rank.vue'),
+    children: [
+      {
+        path: 'detail/:id/:type',
+        component: () => import('../views/Detail/Detail.vue'),
+        props: true
+      }
+    ]
   },
   {
     path: '/search',

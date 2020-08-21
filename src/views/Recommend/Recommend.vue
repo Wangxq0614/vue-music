@@ -1,7 +1,7 @@
 <template>
   <div class="recommend">
     <div class="recommend-container">
-      <ScrollView>
+      <ScrollView ref="scrollView">
         <div>
           <Banner :banners="banners"></Banner>
           <Personalized
@@ -83,6 +83,13 @@ export default {
         path: `/recommend/detail/${id}/${type}`
       })
     }
+  },
+  watch: {
+    personalized () {
+      this.$nextTick(() => {
+        this.$refs.scrollView.refresh()
+      })
+    }
   }
 }
 </script>
@@ -91,17 +98,16 @@ export default {
 @import "@/assets/css/variable.scss";
 @import "@/assets/css/mixin.scss";
 .recommend {
-  position: fixed;
-  top: 184px;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  width: 100%;
+  height: 100%;
   .recommend-container {
-    width: 100%;
-    height: 100%;
+    position: fixed;
+    top: 184px;
+    left: 0;
+    right: 0;
+    bottom: 0;
     overflow: hidden;
-    @include bg_color();
-    background-color: #fff;
+    @include bg_sub_color();
   }
 }
 .v-enter {

@@ -6,9 +6,13 @@ import 'lib-flexible'
 import './assets/css/base.scss'
 import fastclick from 'fastclick'
 import VueLazyload from 'vue-lazyload'
+import Loading from './plugin/loading/index'
 Vue.use(VueLazyload, {
   // 懒加载占位图片
   loading: require('./assets/images/loading.png')
+})
+Vue.use(Loading, {
+  title: '正在加载...'
 })
 
 fastclick.attach(document.body)

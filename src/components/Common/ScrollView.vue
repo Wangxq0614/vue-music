@@ -22,8 +22,8 @@ export default {
       scrollY: true,
       disablePointer: true,
       disableTouch: false,
-      disableMouse: true
-      // click: true
+      disableMouse: true,
+      click: true
     })
     // 1.创建观察者对象
     /*

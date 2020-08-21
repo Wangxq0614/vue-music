@@ -1,14 +1,21 @@
 <template>
-  <div class="header" @click="changeTheme">
-    <div class="header-left" @click.stop="back"></div>
-    <h2 class="header-title">{{title}}</h2>
-    <div class="header-right"></div>
-  </div>
+  <Header class="detail-header">
+    <template #left>
+      <i slot="left" class="header-left" @click.stop="back"></i>
+    </template>
+    <template #center>
+      <h2 slot="center" class="header-title">{{title}}</h2>
+    </template>
+    <template #right>
+      <i slot="right" class="header-right"></i>
+    </template>
+  </Header>
 </template>
 
 <script>
+import Header from '../../components/Common/Header'
 export default {
-  name: 'Header',
+  name: 'DetailHeader',
   props: {
     title: {
       type: String,
@@ -16,20 +23,11 @@ export default {
       required: true
     }
   },
-  data () {
-    return {
-      themes: ['theme', 'theme1', 'theme2'],
-      index: 0
-    }
+
+  components: {
+    Header
   },
   methods: {
-    changeTheme () {
-      this.index++
-      if (this.index >= this.themes.length) {
-        this.index = 0
-      }
-      document.documentElement.setAttribute('data-theme', this.themes[this.index])
-    },
     back () {
       this.$router.go(-1)
     }
@@ -40,20 +38,7 @@ export default {
 <style lang="scss" scoped>
 @import "@/assets/css/variable.scss";
 @import "@/assets/css/mixin.scss";
-.header {
-  // position: relative;
-  // z-index: 999;
-  width: 100%;
-  height: 100px;
-  display: flex;
-  @include bg_color();
-  justify-content: space-between;
-  align-items: center;
-  .header-left,
-  .header-right {
-    width: 84px;
-    height: 84px;
-  }
+.detail-header {
   .header-left {
     @include bg_img("../../assets/images/back");
   }

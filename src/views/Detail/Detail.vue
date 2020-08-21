@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import { getPlayList, getAlbum, getSingerDetail } from '../../api/index'
+import { getPlayList, getAlbum, getSingerDetail, getTopListDetail } from '../../api/index'
 import DeatilHeader from '../../components/Deatil/DeatilHeader'
 import DetailTop from '../../components/Deatil/DetailTop'
 import DetailBottom from '../../components/Deatil/DetailBottom'
@@ -59,6 +59,14 @@ export default {
         coverImgUrl: singer.artist.picUrl,
         tracks: singer.hotSongs
       }
+    } else if (this.type === 'rank') {
+      const rank = await getTopListDetail(this.id)
+      console.log(rank)
+      this.playList = {
+        name: rank.playlist.name,
+        coverImgUrl: rank.playlistcreator.backgroundUrl,
+        tracks: rank.playlist.tracks
+      }
     }
   },
   mounted () {
@@ -92,14 +100,14 @@ export default {
   right: 0;
   bottom: 0;
   z-index: 9999;
-  @include bg_color();
-  background-color: #fff;
+  @include bg_sub_color();
   .detail-bottom {
     position: fixed;
     top: 500px;
     bottom: 0;
     left: 0;
     right: 0;
+    padding-bottom: 500px;
   }
 }
 </style>
