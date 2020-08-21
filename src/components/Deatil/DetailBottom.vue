@@ -2,7 +2,7 @@
   <ul class="detail-bottom">
     <li class="detail-bottom-top">
       <i class="detail-bottom-top-icon"></i>
-      <p class="detail-bottom-top-title" @click="selectAllMusic">播放全部</p>
+      <p class="detail-bottom-top-title" @click.stop="selectAllMusic">播放全部</p>
     </li>
     <li
       v-for="item in playlist"

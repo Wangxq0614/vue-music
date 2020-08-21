@@ -78,6 +78,7 @@ export default {
   bottom: 0;
   width: 100%;
   height: 130px;
+  z-index: 9999;
   @include bg_color();
   .mini-player-container {
     width: 100%;

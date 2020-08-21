@@ -165,6 +165,7 @@ export default {
   left: 0;
   bottom: 0;
   width: 100%;
+  z-index: 9999;
   @include bg_sub_color();
   .list-player-container {
     width: 100%;

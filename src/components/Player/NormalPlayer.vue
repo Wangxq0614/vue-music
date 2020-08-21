@@ -77,12 +77,13 @@ export default {
   left: 0;
   right: 0;
   bottom: 0;
+  z-index: 9999;
   @include bg_sub_color();
   .normal-player-container {
     width: 100%;
     height: 100%;
     position: relative;
-    z-index: 999;
+    z-index: 9999;
   }
   .normal-player-bg {
     width: 100%;

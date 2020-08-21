@@ -20,12 +20,6 @@
         </ul>
       </ScrollView>
       <ul class="singer-list-keys">
-        <!-- <li
-        v-for="(key,index) in keys"
-        :key="key"
-        @click.stop="keyDown(index)"
-        :class="{'active':currentIndex === index}"
-        >{{key}}</li>-->
         <li
           v-for="(key,index) in keys"
           :key="key"
@@ -145,6 +139,7 @@ export default {
   watch: {
     list () {
       this.$nextTick(() => {
+        this.$refs.scrollView.refresh()
         this.$refs.group.forEach((group) => {
           this.groupsTop.push(group.offsetTop)
         })
