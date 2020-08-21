@@ -108,6 +108,7 @@ export default {
     left: 0;
     right: 0;
     padding-bottom: 500px;
+    background-color: #fff;
   }
 }
 </style>

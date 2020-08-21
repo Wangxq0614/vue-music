@@ -124,5 +124,7 @@ export default {
 .player {
   width: 100%;
   height: 100%;
+  position: relative;
+  z-index: 99999;
 }
 </style>
