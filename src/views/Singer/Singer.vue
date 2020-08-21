@@ -8,8 +8,8 @@
             <ul class="group-item">
               <li
                 class="group-list"
-                v-for="obj in list[index]"
-                :key="Math.random()*10 + obj.id"
+                v-for="(obj,i) in list[index]"
+                :key="i"
                 @click.stop="switchSInger(obj.id)"
               >
                 <img v-lazy="obj.img1v1Url" alt />
@@ -56,17 +56,16 @@ export default {
       currentIndex: 0,
       beginOffsetY: 0,
       moveOffsetY: 0,
-      scrollY: 0,
-      fixTitleHeight: 0
+      scrollY: 0
     }
   },
   components: {
     ScrollView
   },
   async created () {
-    const { keys, list } = await getAllArtists()
-    this.keys = keys
-    this.list = list
+    const data = await getAllArtists()
+    this.keys = data.keys
+    this.list = data.list
   },
   mounted () {
     this.$refs.scrollView.scrolling((y) => {
