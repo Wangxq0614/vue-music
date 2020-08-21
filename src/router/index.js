@@ -53,6 +53,7 @@ const routes = [
 ]
 
 const router = new VueRouter({
+  // 使用预渲染，路由模式必须为history
   mode: 'history',
   base: process.env.BASE_URL,
   routes
