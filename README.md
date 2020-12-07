@@ -1,24 +1,24 @@
-# music
+# 基于Vue2.x的网易云音乐项目
 
-## Project setup
+## 下载
 ```
-npm install
+git clone https://github.com/Wangxq0614/vue-music.git
 ```
 
-### Compiles and hot-reloads for development
+## 安装
+
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### **运行**
+
 ```
-npm run build
+npm run serve
 ```
 
-### Lints and fixes files
-```
-npm run lint
-```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+
+参考资料：
+
+​		https://github.com/Binaryify/NeteaseCloudMusicApi

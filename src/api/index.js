@@ -68,6 +68,6 @@ export const getAllArtists = () => {
 
 export const getSingerDetail = (data) => Network.get('/artists', { id: data })// 歌手详情
 export const getTopList = () => Network.get('/toplist/detail')// 排行榜
-export const getTopListDetail = (data) => Network.get('/top/list', { idx: data })// 排行榜详情
+export const getTopListDetail = (data) => Network.get('/playlist/detail', { id: data })// 排行榜详情
 export const getSearchValue = (data) => Network.get('/search', { type: 1, keywords: data })// 搜索
 export const getHotSearch = () => Network.get('/search/hot')// 热门搜索

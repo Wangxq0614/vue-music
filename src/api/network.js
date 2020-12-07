@@ -2,7 +2,7 @@ import axios from 'axios'
 import Vue from 'vue'
 
 // 全局配置
-axios.defaults.baseURL = 'http://music.it666.com:3666'
+axios.defaults.baseURL = 'http://47.93.137.172:3000/'
 axios.defaults.timeout = 5000
 let count = 0
 

@@ -63,10 +63,9 @@ export default {
       }
     } else if (this.type === 'rank') {
       const rank = await getTopListDetail(this.id)
-      console.log(rank)
       this.playList = {
         name: rank.playlist.name,
-        coverImgUrl: rank.playlistcreator.backgroundUrl,
+        coverImgUrl: rank.playlist.coverImgUrl,
         tracks: rank.playlist.tracks
       }
     }
