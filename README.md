@@ -8,7 +8,7 @@ git clone https://github.com/Wangxq0614/vue-music.git
 ## 安装
 
 ```
-npm run serve
+npm install
 ```
 
 ### **运行**
